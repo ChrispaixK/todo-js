@@ -1,0 +1,334 @@
+:root {
+  --VeryLightGray: hsl(0, 0%, 98%);
+  --VeryLightGrayishBlue: hsl(236, 33%, 92%);
+
+  /* Dark mode */
+  --VeryDarkBlue: hsl(235, 21%, 11%);
+  --VeryDarkDesaturatedBlue: hsl(235, 24%, 19%);
+  --LightGrayishBlue: hsl(236, 33%, 92%);
+  --DarkGrayishBlue: hsl(234, 11%, 52%);
+  --VeryDarkGrayishBlue: hsl(237, 14%, 26%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+  color: var(--VeryDarkGrayishBlue);
+}
+
+body {
+  background: var(--VeryLightGrayishBlue) url(./assets/bg-mobile-light.jpg);
+  background-repeat: no-repeat;
+  background-size: 100vw 36vh;
+}
+
+body.dark {
+  background: var(--VeryDarkBlue) url(./assets/bg-mobile-dark.jpg);
+  background-repeat: no-repeat;
+  background-size: 100vw 36vh;
+}
+
+main {
+  margin: 12vh auto;
+  width: 85vw;
+}
+
+.heading {
+  color: #fff;
+  font-size: 38px;
+  margin-bottom: 35px;
+}
+
+.alert.invalid,
+.bi-x-circle {
+  color: red;
+  font-size: 18px;
+}
+
+.alert.success {
+  background:
+    url("assets/icon-check.svg"),
+    linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+}
+
+.field-input-to-do {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: var(--VeryLightGray);
+  width: 100%;
+  border-radius: 5px;
+}
+
+body.dark .field-input-to-do,
+body.dark .input-to-do,
+body.dark .submit-btn,
+body.dark .tasks,
+body.dark .ul-foot {
+  background: var(--VeryDarkDesaturatedBlue);
+}
+
+.input-to-do {
+  width: 70%;
+  height: 60px;
+  padding: 15px;
+  font-size: 18px;
+  outline: 0;
+  border: 0;
+}
+
+body.dark .input-to-do {
+  color: var(--LightGrayishBlue);
+}
+
+body.dark .input-to-do::placeholder {
+  color: var(--DarkGrayishBlue);
+}
+
+.submit-btn {
+  width: 5%;
+  padding-right: 10px;
+  border: 0;
+  background: var(--VeryLightGray);
+  cursor: pointer;
+  font-size: 22px;
+}
+
+
+body.dark .submit-btn .bi {
+  color: var(--DarkGrayishBlue);
+}
+
+.tasks {
+  list-style: none;
+  border-radius: 5px 5px 0 0;
+  background: var(--VeryLightGray);
+  -webkit-box-shadow: 7px 21px 47px -28px var(--VeryDarkGrayishBlue);
+  -moz-box-shadow: 7px 21px 47px -28px var(--VeryDarkGrayishBlue);
+  box-shadow: 7px 21px 47px -28px var(--VeryDarkGrayishBlue);
+}
+
+.task {
+  padding: 15px;
+  border-bottom: 1px solid rgb(200, 200, 213);
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+body.dark .task {
+  border-bottom: 1px solid var(--VeryDarkGrayishBlue);
+}
+
+.draggable.dragging {
+  opacity: 0.5;
+}
+
+.task.active {
+  border: 2px solid rgb(103, 103, 103);
+  border-radius: 3px;
+}
+
+body.dark .task.active {
+  border: 2px solid var(--LightGrayishBlue);
+}
+
+.task-field {
+  font-size: 18px;
+  display: flex;
+  gap: 15px;
+  padding: 5px;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  border: 1px solid var(--VeryDarkGrayishBlue);
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+  background:
+    url("assets/icon-check.svg"),
+    linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+}
+
+body.dark input[type="checkbox"] {
+  border: 1px solid var(--VeryLightGrayishBlue);
+}
+
+input[type="checkbox"]:checked ~ label {
+  text-decoration: line-through;
+  color: var(--DarkGrayishBlue);
+}
+
+body.dark input[type="checkbox"]:checked ~ label {
+  color: var(--DarkGrayishBlue);
+}
+
+.task-description {
+  outline: 0;
+  border: 0;
+  max-width: 45vw;
+}
+
+body.dark .task-description {
+  color: var(--VeryLightGrayishBlue);
+}
+
+.user-interaction {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.update-btn {
+  font-size: 22px;
+  display: none;
+}
+
+.remove-btn {
+  font-size: 22px;
+}
+
+.update-btn,
+.edit-btn,
+.remove-btn {
+  cursor: pointer;
+}
+
+body.dark .update-btn,
+body.dark .edit-btn,
+body.dark .remove-btn {
+  color: var(--VeryLightGrayishBlue);
+}
+
+.ul-foot {
+  list-style: none;
+  width: 100%;
+  background: var(--VeryLightGray);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-radius: 0 0 8px 8px;
+  font-size: 13px;
+}
+
+.ul-foot a {
+  text-decoration: none;
+}
+
+.ul-foot a:hover {
+  color: #000;
+}
+
+body.dark .ul-foot a {
+  color: var(--DarkGrayishBlue);
+  text-decoration: none;
+}
+
+body.dark .ul-foot a:hover {
+  color: var(--VeryLightGrayishBlue);
+  text-decoration: none;
+}
+
+.tasks-left,
+.tasks-left-num {
+  font-size: 13px;
+  color: var(--DarkGrayishBlue);
+}
+
+.task-sorting {
+  display: flex;
+  list-style: none;
+  gap: 10px;
+}
+
+.task-sorting li {
+  color: var(--DarkGrayishBlue);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.task-sorting li.active {
+  color: hsl(220, 98%, 61%);
+}
+
+@media (min-width: 768px) {
+  body {
+    background: var(--VeryLightGrayishBlue) url(./assets/bg-desktop-light.jpg);
+    background-repeat: no-repeat;
+    background-size: 100vw 36vh;
+  }
+
+  body.dark {
+    background: var(--VeryDarkBlue) url(./assets/bg-desktop-dark.jpg);
+    background-repeat: no-repeat;
+    background-size: 100vw 36vh;
+  }
+
+  main {
+    width: 30vw;
+  }
+
+  .task-description {
+    max-width: 15vw;
+  }
+}
+
+.mode-toggler {
+  opacity: 0;
+  position: absolute;
+}
+
+.toggler-label {
+  background: linear-gradient(to left, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  width: 60px;
+  height: 32px;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.bi-sun-fill,
+.bi-moon {
+  color: #fff;
+}
+
+.toggler-label .ball {
+  background-color: #fff;
+  border: 1px solid linear-gradient(to left, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  left: 0;
+  right: 32px;
+  border-radius: 50%;
+  transition: transform 0.3s linear;
+}
+
+.ball.active {
+  transform: translateX(32px);
+}
