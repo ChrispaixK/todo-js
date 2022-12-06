@@ -1,5 +1,6 @@
-import { Task, Store, UI } from '../add_remove_update.js';
-
+import Task from '../logic/task.js';
+import UI from '../logic/ui.js';
+import Store from '../store.js';
 // ? testing the adding function
 describe('Add a new task', () => {
   test(('Adding First Task to storage'), () => {

@@ -1,4 +1,6 @@
-import { Task, Store, UI } from './add_remove_update.js';
+import Store from './store.js';
+import Task from './logic/task.js';
+import UI from './logic/ui.js';
 
 // Event: Add task To list
 document.querySelector('.field-input-to-do').addEventListener('submit', (e) => {

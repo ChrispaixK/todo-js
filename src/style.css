@@ -70,14 +70,6 @@ main {
   border-radius: 5px;
 }
 
-body.dark .field-input-to-do,
-body.dark .input-to-do,
-body.dark .submit-btn,
-body.dark .tasks,
-body.dark .ul-foot {
-  background: var(--VeryDarkDesaturatedBlue);
-}
-
 .input-to-do {
   width: 70%;
   height: 60px;
@@ -85,14 +77,6 @@ body.dark .ul-foot {
   font-size: 18px;
   outline: 0;
   border: 0;
-}
-
-body.dark .input-to-do {
-  color: var(--LightGrayishBlue);
-}
-
-body.dark .input-to-do::placeholder {
-  color: var(--DarkGrayishBlue);
 }
 
 .submit-btn {
@@ -104,11 +88,6 @@ body.dark .input-to-do::placeholder {
   font-size: 22px;
 }
 
-
-body.dark .submit-btn .bi {
-  color: var(--DarkGrayishBlue);
-}
-
 .tasks {
   list-style: none;
   border-radius: 5px 5px 0 0;
@@ -116,6 +95,38 @@ body.dark .submit-btn .bi {
   -webkit-box-shadow: 7px 21px 47px -28px var(--VeryDarkGrayishBlue);
   -moz-box-shadow: 7px 21px 47px -28px var(--VeryDarkGrayishBlue);
   box-shadow: 7px 21px 47px -28px var(--VeryDarkGrayishBlue);
+}
+
+.ul-foot {
+  list-style: none;
+  width: 100%;
+  background: var(--VeryLightGray);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-radius: 0 0 8px 8px;
+  font-size: 13px;
+}
+
+body.dark .field-input-to-do,
+body.dark .input-to-do,
+body.dark .submit-btn,
+body.dark .tasks,
+body.dark .ul-foot {
+  background: var(--VeryDarkDesaturatedBlue);
+}
+
+body.dark .input-to-do {
+  color: var(--LightGrayishBlue);
+}
+
+body.dark .input-to-do::placeholder {
+  color: var(--DarkGrayishBlue);
+}
+
+body.dark .submit-btn .bi {
+  color: var(--DarkGrayishBlue);
 }
 
 .task {
@@ -218,18 +229,6 @@ body.dark .update-btn,
 body.dark .edit-btn,
 body.dark .remove-btn {
   color: var(--VeryLightGrayishBlue);
-}
-
-.ul-foot {
-  list-style: none;
-  width: 100%;
-  background: var(--VeryLightGray);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px;
-  border-radius: 0 0 8px 8px;
-  font-size: 13px;
 }
 
 .ul-foot a {
