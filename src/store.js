@@ -2,22 +2,16 @@
 class Store {
   // Get Tasks : gets the tasks from store
   static getTasks() {
-    let tasks;
-    if (localStorage.getItem('tasks') === null) {
-      // if there is nothing in storage
-      tasks = []; // create empty array
-    } else {
-      tasks = JSON.parse(localStorage.getItem('tasks')); // convert them in array
-    }
+    let tasks = localStorage.getItem('tasks') || [];
+    tasks = JSON.parse(localStorage.getItem('tasks'));
     return tasks;
   }
 
   // add the task to store
   static addTask(task) {
-    const tasks = Store.getTasks(); // get tasks
-    tasks.push(task); // add new task
-    localStorage.setItem('tasks', JSON.stringify(tasks)); // convert them in string
-    // document.querySelector('.tasks-left-num').textContent = tasks.length;
+    const tasks = Store.getTasks();
+    tasks.push(task);
+    localStorage.setItem('tasks', JSON.stringify(tasks));
   }
 
   // remove a task from store
@@ -36,7 +30,6 @@ class Store {
       }
     }
     localStorage.setItem('tasks', JSON.stringify(tasks));
-    // document.querySelector('.tasks-left-num').textContent = tasks.length;
   }
 
   // update status when user checks the checkbox
